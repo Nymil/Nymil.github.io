@@ -52,7 +52,6 @@ function handleResult() {
     _displayNumber = result;
     _selectedCalculation = null;
     updateDisplay();
-    _displayNumber = 0;
 }
 
 function handleCalculationClick(symbol) {
