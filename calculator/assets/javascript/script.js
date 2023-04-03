@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', init);
 
 let _upperString = "-";
 let _displayNumber = 0;
+let _selectedCalculation = null;
 
 function init() {
     document.querySelectorAll('button').forEach($button => $button.addEventListener('click', handleButtonClick));
@@ -21,21 +22,22 @@ function symbolClick(symbol) {
     switch (symbol) {
         case 'C':
             clearScreen();
-            break
+            break;
         case '←':
             removeLastNumber();
-            break
+            break;
         case '=':
             handleResult();
-            break
+            break;
         default:
             handleCalculationClick(symbol);
-            break
+            break;
     }
 }
 
 function clearScreen() {
     _displayNumber !== 0 ? _displayNumber = 0 : _upperString = "-";
+    _selectedCalculation = null;
     updateDisplay();
 }
 
@@ -44,10 +46,50 @@ function removeLastNumber() {
     updateDisplay();
 }
 
-function handleResult() {}
+function handleResult() {
+    let result = calculateResult();
+    _upperString = '-';
+    _displayNumber = result;
+    _selectedCalculation = null;
+    updateDisplay();
+    _displayNumber = 0;
+}
 
-function handleCalculationClick(symbol) {}
+function handleCalculationClick(symbol) {
+    console.log(symbol);
+    if (_selectedCalculation == null) {
+        _upperString = _displayNumber;
+        _displayNumber = 0;
+        _selectedCalculation = symbol;
+        updateDisplay();
+        return;
+    }
 
+    let result = calculateResult();
+    _upperString = result;
+    _displayNumber = 0;
+    _selectedCalculation = symbol;
+    updateDisplay();
+}
+
+function calculateResult() {
+    let result;
+    switch (_selectedCalculation) {
+        case '×':
+            result = _upperString * _displayNumber;
+            break;
+        case '÷':
+            result = _upperString / _displayNumber;
+            break;
+        case '−':
+            result = _upperString - _displayNumber;
+            break;
+        case '+':
+            result = _upperString + _displayNumber;
+            break;
+    }
+    return result;
+}
 
 function updateDisplay() {
     const $screen = document.querySelector('.screen');
