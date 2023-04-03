@@ -29,6 +29,7 @@ function symbolClick(symbol) {
             handleResult();
             break
         default:
+            handleCalculationClick(symbol);
             break
     }
 }
@@ -44,6 +45,9 @@ function removeLastNumber() {
 }
 
 function handleResult() {}
+
+function handleCalculationClick(symbol) {}
+
 
 function updateDisplay() {
     const $screen = document.querySelector('.screen');
