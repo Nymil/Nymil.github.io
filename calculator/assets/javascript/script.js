@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', init);
 
-_upperString = "-";
-_displayNumber = 0;
+let _upperString = "-";
+let _displayNumber = 0;
 
 function init() {
     document.querySelectorAll('button').forEach($button => $button.addEventListener('click', handleButtonClick));
@@ -46,6 +46,6 @@ function removeLastNumber() {
 function handleResult() {}
 
 function updateDisplay() {
-    $screen = document.querySelector('.screen');
+    const $screen = document.querySelector('.screen');
     $screen.innerHTML = `<span>${_upperString}</span>${_displayNumber}`;
 }
