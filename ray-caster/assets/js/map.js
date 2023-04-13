@@ -19,7 +19,7 @@ class Map {
         rays.forEach((ray, index) => {
             const rayLength = ray.length * Math.cos(this.game.player.angle - ray.angle); // for removing fish eye effect
             const wallHeight = 100000 / rayLength;
-            const wallWidth = _$canvas.height / rays.length;
+            const wallWidth = (_$canvas.width - _$canvas.height) / rays.length;
             const posX = index * wallWidth + _$canvas.height;
             const posY = (_$canvas.height - wallHeight) / 2;
             const brightness = 10000 / (rayLength ** 2) > 1 ? 1 : 10000 / (rayLength ** 2);

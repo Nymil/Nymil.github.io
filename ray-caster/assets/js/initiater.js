@@ -11,7 +11,7 @@ function init() {
 function setUpCanvas() {
     _$canvas = document.querySelector('canvas');
     _ctx = _$canvas.getContext('2d');
-    _$canvas.width = 1600;
+    _$canvas.width = 1900;
     _$canvas.height = 800;
 }
 
