@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="assets/css/reset.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/screen.css" type="text/css">
+
+    <script src="assets/js/drawer.js"></script>
+    <script src="assets/js/cell.js"></script>
+    <script src="assets/js/sudoku.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/initiater.js"></script>
+
+    <title>Sudoku solver</title>
+</head>
+
+<body class="flex-container">
+    <div class="left flex-container">
+        <button id="solve">solve</button>
+    </div>
+    <div class="center flex-container">
+        <h1>Sudoku solver</h1>
+        <canvas></canvas>
+    </div>
+    <div class="right">
+        <p>Info:</p>
+        <p>Enter the numbers of the sudoku puzzle.</p>
+        <p>To enter a number click on a cell and type the number.</p>
+        <p>Press delete to remove a value.</p>
+        <p>Click solve to automatically solve the sudoku.</p>
+        <p>Uses depth first search algorithm.</p>
+    </div>
+</body>
+
+</html>
