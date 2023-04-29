@@ -1,0 +1,78 @@
+body {
+    background: linear-gradient(90deg, rgba(92,2,90,1) 0%, rgba(65,9,121,1) 10%, rgba(0,0,0,1) 34%, rgba(0,0,0,1) 65%, rgba(65,9,121,1) 88%, rgba(92,2,90,1) 100%);
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+canvas {
+    border: 0.1rem solid #fff;
+    box-shadow: 0 0 .2rem #fff,
+    0 0 .2rem #fff,
+    0 0 2rem #bc13fe,
+    0 0 0.8rem #bc13fe,
+    0 0 2.8rem #bc13fe,
+    inset 0 0 1.3rem #bc13fe;
+}
+
+canvas#main-screen {
+    z-index: -1;
+    width: 450px;
+    height: 890px;
+}
+
+div#center {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+div#left {
+
+}
+
+p {
+    color: white;
+    font-size: 2rem;
+    font-family: "Arial Nova", serif;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 .2rem #fff,
+    0 0 .2rem #fff,
+    0 0 2rem #bc13fe,
+    0 0 0.8rem #bc13fe,
+    0 0 2.8rem #bc13fe
+}
+
+p {
+    margin-left: 3rem;
+}
+
+p#score {
+    margin-top: 6rem;
+    font-size: 3.5rem;
+}
+
+p#high-score {
+    margin-bottom: 15rem;
+}
+
+canvas#preview {
+    margin-left: 2rem;
+    width: 300px;
+    height: 300px;
+}
+
+h1 {
+    width: 35rem;
+    text-align: center;
+    color: white;
+    background-color: black;
+    font-size: 3rem;
+    margin: 0.5rem;
+    text-shadow: 0 0 .2rem #fff,
+    0 0 .2rem #fff,
+    0 0 2rem #bc13fe,
+    0 0 0.8rem #bc13fe,
+    0 0 2.8rem #bc13fe
+}

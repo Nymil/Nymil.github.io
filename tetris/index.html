@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/screen.css">
+
+    <script src="assets/js/drawer.js"></script>
+    <script src="assets/js/piece.js"></script>
+    <script src="assets/js/board.js"></script>
+    <script src="assets/js/game.js"></script>
+    <script src="assets/js/initiater.js"></script>
+
+    <title>Nymil's tetris</title>
+</head>
+
+<body>
+    <div id="left">
+        <p id="score">score: 0</p>
+        <p id="last-score">last score: 0</p>
+        <p id="high-score">high score: 0</p>
+        <p id="info">info:<br>
+            Just simple tetris<br>
+            Arrow left and right to move<br>
+            Arrow up to rotate<br>
+            Arrow down to teleport downwards<br>
+            R to restart</p>
+    </div>
+    <div id="center">
+        <h1>Tetris</h1>
+        <canvas id="main-screen"></canvas>
+    </div>
+    <div id="right">
+        <p>next piece:</p>
+        <canvas id="preview"></canvas>
+    </div>
+</body>
+
+</html>
