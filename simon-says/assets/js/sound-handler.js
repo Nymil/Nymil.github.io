@@ -1,10 +1,7 @@
 "use strict";
 
 function loadSounds() {
-    let loc = "..";
-    if (window.location.pathname.includes('index.html')) {
-        loc = "assets";
-    }
+    let loc = 'assets';
     // makes div with sounds
     const soundsDiv = document.createElement('div');
     soundsDiv.id = 'sounds';
