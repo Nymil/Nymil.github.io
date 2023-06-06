@@ -6,7 +6,6 @@ class Main {
         this.fps = 60;
         this.field = new Field();
         this.simulationStarted = false;
-        this.heldMouseButton = null;
         this.addEventListeners()
     }
 
@@ -25,6 +24,9 @@ class Main {
         const clickedPos = this.getMousePos(e);
         if (e.which === 1 && this.simulationStarted) {
             this.field.setGrabbedNode(clickedPos);
+        }
+        if (e.which === 3 && this.simulationStarted) {
+            this.field.setCutMousePos(clickedPos);
         }
         if (this.simulationStarted) return;
         this.field.statifyClick(clickedPos);
@@ -47,11 +49,15 @@ class Main {
         e.preventDefault();
         const pos = this.getMousePos(e);
         this.field.moveGrabbedNode(pos);
+        this.field.checkCut(pos);
     }
 
     releaseMouse(e) {
         if (e.which === 1) {
             this.field.clearGrabbedNode();
+        }
+        if (e.which === 3) {
+            this.field.clearCutMousePos();
         }
     }
 
@@ -69,6 +75,7 @@ class Main {
         document.querySelector('#start-simulation').addEventListener('mousedown', (e) => this.startSimulation(e));
         document.querySelector('canvas').addEventListener('contextmenu', (e) => e.preventDefault());
         document.querySelector('canvas').addEventListener('mousemove', (e) => this.handleCanvasHover(e));
+        document.querySelector('canvas').addEventListener('mouseleave', (e) => this.field.clearCutMousePos());
         document.addEventListener('mouseup', (e) => this.releaseMouse(e));
     }
 }

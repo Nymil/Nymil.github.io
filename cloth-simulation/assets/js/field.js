@@ -9,6 +9,7 @@ class Field {
         this.offsetToCorner = 30;
         this.distToBottom = 125;
         this.grabedNode = null;
+        this.cutMousePos = null;
         this.nodes = [];
         this.fillNodes();
         this.connections = [];
@@ -27,6 +28,23 @@ class Field {
             const bottomNode = this.getNodeById(nodeId + this.nodeCount.horizontal);
             if (bottomNode) this.connections.push(new Connection(node, bottomNode));
         });
+    }
+
+    setCutMousePos(pos) {
+        this.cutMousePos = pos;
+    }
+
+    checkCut(pos) {
+        if (this.cutMousePos === null) return;
+        const cutConnection = this.connections.find(connection => connection.intersects(this.cutMousePos, pos));
+        this.cutMousePos = pos;
+        if (cutConnection) {
+            this.connections = this.connections.filter(connection => connection !== cutConnection);
+        }
+    }
+
+    clearCutMousePos() {
+        this.cutMousePos = null;
     }
 
     getNodeById(id) {
