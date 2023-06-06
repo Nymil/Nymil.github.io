@@ -1,0 +1,49 @@
+:root {
+    --bg-color: #8c8c8c;
+    --p-color: #1e1e1e;
+    --button-hover-color: #cccccc;
+    --button-click-color: #b0b0b0;
+}
+
+body {
+    background: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+canvas {
+    border: 0.25rem solid black;
+    height: 650px;
+    width: 1075px;
+}
+
+p {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: var(--p-color);
+}
+
+button  {
+    height: 3rem;
+    width: 15rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 0.25rem;
+}
+
+button:hover {
+    background: var(--button-hover-color);
+}
+button:active {
+    background: var(--button-click-color);
+}
+
+h1 {
+    font-size: 5rem;
+    margin: 3rem 0 0.5rem 0;
+}
+
+
